@@ -1,14 +1,9 @@
 *API for a blog with authentication.*
-
-This app uses local memory as its database, which means all users, posts, and JWT tokens will be lost whenever the server is restarted.
-
-The JWT tokens are good for 45 minutes.
-
-Here is a list of the routes and what they do:
+This app uses local memory as its database, which means all users, posts, and JWT tokens will be lost whenever the server is restarted. The JWT tokens are good for 45 minutes. Here is a list of the routes and what they do.
 
 Start here:
 
-
+```
 '/users' POST
 Pass JSON to create an account. Example:
 { "name":"kurt", "password":"kurtspassword"}
@@ -26,15 +21,15 @@ Use the token to explore all parts of the API that require authentication:
 Get a list of all users.
 
 
-'/users/<id>' GET
+'/users/:id' GET
 View a particular user.
 
 
-'/users/<id>' PUT
+'/users/:id' PUT
 Change your name or password. (May not be working yet. You may even be able to change another user's name and password!)
 
 
-'/users/<id>' DELETE
+'/users/:id' DELETE
 Delete your account. (You may be able to delete other users' accounts, too.)
 
 
@@ -46,7 +41,7 @@ Get a list of all posts that you wrote.
 Get a list of all posts written by all users.
 
 
-'/myposts/<post_id>' GET
+'/myposts/:post_id' GET
 View a particular post that you wrote.
 
 
@@ -55,10 +50,11 @@ Create a post. Format the JSON to be passed in as:
 { "title":"Post Title", "content":"Post content..."}
 
 
-'/myposts/<id>' PUT
+'/myposts/:id' PUT
 Modify a post. Format JSON as:
 { "title":"Post Title", "content":"Post content..."}
 
 
-'/myposts/<id>' DELETE
+'/myposts/:id' DELETE
 Delete a post.
+```
